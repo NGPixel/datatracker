@@ -10,9 +10,8 @@ chown -R "$WORKSPACE_UID_GID" "$WORKSPACEDIR/node_modules" "$WORKSPACEDIR/.parce
 
 # Generate static assets
 
-npm install --prefer-offline --no-audit
 echo "Building static assets... (this could take a minute or two)"
-npx parcel build
+yarn parcel build
 
 # Copy config files if needed
 

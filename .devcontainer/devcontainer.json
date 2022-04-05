@@ -79,7 +79,8 @@
 		"mrmlnc.vscode-duplicate",
 		"eamodio.gitlens",
 		"oderwat.indent-rainbow",
-		"johnsoncodehk.volar"
+		"johnsoncodehk.volar",
+        "arcanis.vscode-zipfs"
 	],
     
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
