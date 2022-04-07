@@ -3,6 +3,7 @@
 {% load ietf_filters static %}
 {% load origin %}
 {% origin %}
+{% load django_vite %}
 {% load django_bootstrap5 %}
 <html lang="en">
     <head>
@@ -23,15 +24,14 @@
         </style>
         {% block pagehead %}{% endblock %}
         {% if server_mode and server_mode == "production" %}
-            <link rel="shortcut icon"
-                  href="{% static 'ietf/images/ietf-icon-blue3.png' %}">
+            <link rel="shortcut icon" href="{% static 'ietf/images/ietf-icon-blue3.png' %}">
         {% else %}
-            <link rel="shortcut icon"
-                  href="{% static 'ietf/images/ietf-icon-red3.png' %}">
+            <link rel="shortcut icon" href="{% static 'ietf/images/ietf-icon-red3.png' %}">
         {% endif %}
-        <link rel="apple-touch-icon"
-              href="{% static 'ietf/images/apple-touch-icon.png' %}">
-        <script src="{% static 'ietf/js/ietf.js' %}"></script>
+        <link rel="apple-touch-icon" href="{% static 'ietf/images/apple-touch-icon.png' %}">
+        {% vite_hmr_client %}
+        {% vite_asset 'client/main.js' %}
+        {% comment %} <script src="{% static 'ietf/js/ietf.js' %}"></script> {% endcomment %}
     </head>
     <body {% block bodyAttrs %}{% endblock %} class="position-relative"
           data-group-menu-data-url="{% url 'ietf.group.views.group_menu_data' %}">

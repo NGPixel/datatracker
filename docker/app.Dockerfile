@@ -32,8 +32,8 @@ RUN apt-get install -qy \
 	bash \
 	build-essential \
 	curl \
-    default-jdk \
-    docker-ce-cli \
+	default-jdk \
+	docker-ce-cli \
 	enscript \
 	fish \
 	gawk \
@@ -44,24 +44,24 @@ RUN apt-get install -qy \
 	graphviz \
 	jq \
 	less \
-    libcairo2-dev \
-    libgtk2.0-0 \
-    libgtk-3-0 \
-    libnotify-dev \
-    libgconf-2-4 \
-    libgbm-dev \
-    libnss3 \
-    libxss1 \
-    libasound2 \
-    libxtst6 \
+	libcairo2-dev \
+	libgtk2.0-0 \
+	libgtk-3-0 \
+	libnotify-dev \
+	libgconf-2-4 \
+	libgbm-dev \
+	libnss3 \
+	libxss1 \
+	libasound2 \
+	libxtst6 \
 	libmagic-dev \
 	libmariadb-dev \
-    libmemcached-tools \
+	libmemcached-tools \
 	libtidy-dev \
 	locales \
 	mariadb-client \
-    memcached \
-    netcat \
+	memcached \
+	netcat \
 	nano \
 	pigz \
 	pv \
@@ -69,14 +69,14 @@ RUN apt-get install -qy \
 	ripgrep \
 	rsync \
 	rsyslog \
-    ruby \
-    ruby-rubygems \
+	ruby \
+	ruby-rubygems \
 	subversion \
 	unzip \
 	wget \
-    xauth \
-    xvfb \
-    yang-tools \
+	xauth \
+	xvfb \
+	yang-tools \
 	zsh
 
 # Install kramdown-rfc2629 (ruby)
@@ -140,10 +140,5 @@ RUN sed -i 's/\r$//' /docker-init.sh && \
 # Create workspace
 RUN mkdir -p /workspace
 WORKDIR /workspace
-
-# Install NPM modules
-COPY package.json package.json
-RUN npm install --no-audit
-RUN rm -f package.json package-lock.json
 
 # ENTRYPOINT [ "/docker-init.sh" ]
