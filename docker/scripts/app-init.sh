@@ -11,7 +11,7 @@ chown -R "$WORKSPACE_UID_GID" "$WORKSPACEDIR/node_modules" "$WORKSPACEDIR/.parce
 # Generate static assets
 
 echo "Building static assets... (this could take a minute or two)"
-yarn parcel build
+yarn build
 
 # Copy config files if needed
 
